@@ -4,6 +4,8 @@ import { AppProps } from 'next/app';
 
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import Container from '@mui/material/Container';
+
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import theme from '../theme';
 
@@ -28,7 +30,9 @@ export default function MyApp(props: MyAppProps) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Topbar />
-        <Component {...pageProps} />
+        <Container maxWidth="lg">
+          <Component {...pageProps} />
+        </Container>
       </ThemeProvider>
     </CacheProvider>
   );

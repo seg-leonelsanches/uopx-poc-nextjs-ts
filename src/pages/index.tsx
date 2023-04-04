@@ -1,34 +1,30 @@
 import * as React from 'react';
 
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import { styled } from '@mui/material/styles';
 
-import Copyright from '@/components/ui/copyright';
-import ProTip from '@/components/ui/pro-tip';
-import Link from '@/components/ui/link';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import { LeftPanel, EmailLookup } from '@/components/application-start';
+import { CreateUoPxAccount } from '@/components/application-start/create-uopx-account';
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
 export default function Home() {
   return (
-    <Container maxWidth="lg">
-      <Box
-        sx={{
-          my: 4,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <Typography variant="h4" component="h1" gutterBottom>
-          Material UI - Next.js example in TypeScript
-        </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
-        <ProTip />
-        <Copyright />
-      </Box>
-    </Container>
+    <Grid container>
+      <Grid item xs={4}>
+        <LeftPanel />
+      </Grid>
+      <Grid item xs={8}>
+        <EmailLookup />
+        <CreateUoPxAccount />
+      </Grid>
+    </Grid>
   );
 }
