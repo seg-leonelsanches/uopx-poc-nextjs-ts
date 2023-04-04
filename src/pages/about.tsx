@@ -1,14 +1,13 @@
 import * as React from 'react';
-
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-
-import Copyright from '@/components/ui/copyright';
-import ProTip from '@/components/ui/pro-tip';
+import Button from '@mui/material/Button';
 import Link from '@/components/ui/link';
+import ProTip from '@/components/ui/pro-tip';
+import Copyright from '@/components/ui/copyright';
 
-export default function Home() {
+export default function About() {
   return (
     <Container maxWidth="lg">
       <Box
@@ -23,9 +22,11 @@ export default function Home() {
         <Typography variant="h4" component="h1" gutterBottom>
           Material UI - Next.js example in TypeScript
         </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
+        <Box maxWidth="sm">
+          <Button variant="contained" component={Link} noLinkStyle href="/">
+            Go to the home page
+          </Button>
+        </Box>
         <ProTip />
         <Copyright />
       </Box>
