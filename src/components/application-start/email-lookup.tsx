@@ -1,8 +1,16 @@
 import * as React from 'react';
 import { Typography, TextField, Button, Grid, FormControl } from '@mui/material';
 
-export const EmailLookup = () => (
-    <>
+export interface EmailLookupProps {
+    setLookupDone: (value: boolean) => void;
+}
+
+export const EmailLookup: React.FunctionComponent<EmailLookupProps> = (props) => {
+    const continueClick = () => {
+        props.setLookupDone(true);
+    }
+
+    return (<>
         <Grid item>
             <Typography variant="h3" component="h4">
                 You can complete our application in about 20 minutes. Let's get started.
@@ -14,7 +22,7 @@ export const EmailLookup = () => (
             </FormControl>
         </Grid>
         <Grid item>
-            <Button variant="contained">Continue</Button>
+            <Button variant="contained" onClick={() => continueClick()}>Continue</Button>
         </Grid>
-    </>
-)
+    </>);
+}

@@ -11,6 +11,7 @@ import theme from '../theme';
 
 import { createEmotionCache } from '@/components/emotion-cache';
 import { Topbar } from '@/components/topbar';
+import { AnalyticsProvider } from '@/providers';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -21,19 +22,23 @@ export interface MyAppProps extends AppProps {
 
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  const writeKey: string = String(process.env.NEXT_PUBLIC_SEGMENT_WRITE_KEY)
+
   return (
-    <CacheProvider value={emotionCache}>
-      <Head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Head>
-      <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        <Topbar />
-        <Container maxWidth="lg">
-          <Component {...pageProps} />
-        </Container>
-      </ThemeProvider>
-    </CacheProvider>
+    <AnalyticsProvider writeKey={writeKey}>
+      <CacheProvider value={emotionCache}>
+        <Head>
+          <meta name="viewport" content="initial-scale=1, width=device-width" />
+        </Head>
+        <ThemeProvider theme={theme}>
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          <Topbar />
+          <Container maxWidth="lg">
+            <Component {...pageProps} />
+          </Container>
+        </ThemeProvider>
+      </CacheProvider>
+    </AnalyticsProvider>
   );
 }
