@@ -1,9 +1,9 @@
 {
-  "name": "typescript-nextjs-starter",
-  "description": "A TypeScript starter for Next.js that includes all you need to build amazing projects",
+  "name": "uopx-poc-nextjs-ts",
+  "description": "This is a mock application for The University of Phoenix to show how to onboard their Admission Flow with Segment.",
   "version": "1.0.0",
   "private": true,
-  "author": "João Pedro Schmitz <hey@joaopedro.dev> (@jpedroschmitz)",
+  "author": "Leonel Sanches",
   "license": "MIT",
   "keywords": [
     "nextjs",
@@ -16,16 +16,12 @@
     "start": "next start",
     "type-check": "tsc --noEmit",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
-    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
-    "postinstall": "husky install"
-  },
-  "lint-staged": {
-    "./src/**/*.{ts,js,jsx,tsx}": [
-      "eslint --ignore-path .gitignore --fix",
-      "prettier --ignore-path .gitignore --write"
-    ]
+    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write"
   },
   "dependencies": {
+    "@emotion/react": "11.10.6",
+    "@emotion/styled": "11.10.6",
+    "@mui/material": "5.11.16",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -44,7 +40,6 @@
     "eslint-import-resolver-typescript": "3.5.4",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-prettier": "4.2.1",
-    "husky": "8.0.3",
     "lint-staged": "13.2.0",
     "prettier": "2.8.7",
     "typescript": "5.0.3"
