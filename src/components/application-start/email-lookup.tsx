@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Typography, TextField, Button, Grid, FormControl } from '@mui/material';
 
 export interface EmailLookupProps {
+    setEmail: (value: string) => void;
     setLookupDone: (value: boolean) => void;
 }
 
@@ -18,7 +19,7 @@ export const EmailLookup: React.FunctionComponent<EmailLookupProps> = (props) =>
         </Grid>
         <Grid item>
             <FormControl fullWidth sx={{ m: 1 }}>
-                <TextField id="outlined-basic" label="Email" variant="outlined" required />
+                <TextField id="outlined-basic" label="Email" variant="outlined" required onChange={(e) => props.setEmail(e.target.value)} />
             </FormControl>
         </Grid>
         <Grid item>
