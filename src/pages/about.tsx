@@ -1,8 +1,10 @@
 import * as React from 'react';
+
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+
 import Link from '@/components/ui/link';
 import ProTip from '@/components/ui/pro-tip';
 import Copyright from '@/components/ui/copyright';
