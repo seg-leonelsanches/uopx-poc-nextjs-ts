@@ -19,9 +19,11 @@
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write"
   },
   "dependencies": {
-    "@emotion/react": "11.10.6",
-    "@emotion/styled": "11.10.6",
-    "@mui/material": "5.11.16",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@emotion/cache": "^11.10.6",
+    "@emotion/server": "^11.10.6",
+    "@mui/material": "^5.2.4",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
