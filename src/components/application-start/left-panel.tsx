@@ -1,5 +1,7 @@
 import * as React from 'react';
+
 import Image from 'next/image';
+
 import { Grid, Typography, List, ListItem, ListItemText } from '@mui/material';
 
 export const LeftPanel = () => (
