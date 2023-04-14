@@ -4,6 +4,8 @@ import { Box, FormControlLabel, FormGroup, Grid, Paper, Radio, Typography } from
 
 export interface DegreeButtonProps {
   label: string;
+  value: 'bachelor' | 'associate';
+  onClick: (degree: 'bachelor' | 'associate') => void;
 }
 
 export const DegreeButton: React.FunctionComponent<DegreeButtonProps> = (props) => (
@@ -11,7 +13,11 @@ export const DegreeButton: React.FunctionComponent<DegreeButtonProps> = (props) 
     <Box>
       <Paper>
         <FormGroup>
-          <FormControlLabel control={<Radio />} label={props.label} value={props.label} />
+          <FormControlLabel control={
+            <Radio
+              onClick={() => props.onClick(props.value)}
+            />
+          } label={props.label} value={props.value} />
         </FormGroup>
       </Paper>
     </Box>
