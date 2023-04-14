@@ -1,11 +1,20 @@
 import * as React from 'react';
+import Link from 'next/link';
 
 import { Box, Checkbox, FormControlLabel, FormGroup, Grid, Paper, Typography } from '@mui/material';
 import { ApplicationForm, DegreeForm, DegreeTitle, OpportunityButton, OpportunityTitle } from '@/components/ways-to-save';
 
+
 export default function WaysToSave() {
   return (
     <Grid container>
+      <Grid item xs={12}>
+        <Link href="/">
+          <Typography variant="h5" component="h6">
+            To Application Form
+          </Typography>
+        </Link>
+      </Grid>
       <Grid item xs={12}>
         <OpportunityTitle />
       </Grid>
