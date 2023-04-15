@@ -18,8 +18,8 @@ const DegreeFormInternal: React.FunctionComponent = () => {
       <RadioGroup
         row
         value={waysToSaveStore.degree}
-        aria-labelledby="demo-radio-buttons-group-label"
-        name="radio-buttons-group"
+        aria-labelledby="degree-group-label"
+        name="degree-group"
       >
         <DegreeButton label="Bachelor's Degree" value='bachelor' onClick={setDegree} />
         <DegreeButton label="Associate Degree" value='associate' onClick={setDegree} />
