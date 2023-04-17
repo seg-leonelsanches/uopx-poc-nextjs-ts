@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import crypto from 'crypto';
 
-import { Box, Button, Checkbox, FormControlLabel, FormGroup, Grid, Paper, Typography } from '@mui/material';
+import { Button, Grid, Typography } from '@mui/material';
 import { ApplicationForm, DegreeForm, DegreeTitle, OpportunityButton, OpportunityTitle } from '@/components/ways-to-save';
 import { useAnalytics } from '@/hooks';
 import { useMobxStores } from '@/data/stores';
